@@ -23,6 +23,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+/**
+ * Activity for accessing device contacts
+ * Source code: https://stackoverflow.com/questions/33954358/how-to-select-contact-number-from-contact-list-using-android-studio/33956788
+ */
+
 public class GetContactsActivity extends AppCompatActivity {
 
     // Emergency Service that the user chose in ChooseEmergencyServiceActivity
@@ -76,6 +81,7 @@ public class GetContactsActivity extends AppCompatActivity {
         contactsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                // Source code: https://stackoverflow.com/questions/18444671/remove-item-in-arrayadapterstring-in-listview
                 // If item is clicked in listview
                 Contact contact = contacts.get(position);
                 // Remove the contact from the listview
@@ -101,32 +107,6 @@ public class GetContactsActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void getContacts() {
-        // If we don't have permission to read contacts
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-            // Ask for permission to read contacts
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_CONTACTS}, 0);
-        }
-
-        ContentResolver contentResolver = getContentResolver();
-        Uri uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
-        Cursor cursor = contentResolver.query(uri, null, null, null, null);
-
-        Log.i(TAG, "Total Contacts: " + Integer.toString(cursor.getCount()));
-        // If we have a contact
-        if (cursor.getCount() > 0) {
-            while (cursor.moveToNext()) {
-                @SuppressLint("Range") String contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                @SuppressLint("Range") String contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-
-                Log.i(TAG, "Name: " + contactName + " Number: " + contactNumber);
-            }
-        }
-
-
-
     }
 
     private void selectSingleContact() {
