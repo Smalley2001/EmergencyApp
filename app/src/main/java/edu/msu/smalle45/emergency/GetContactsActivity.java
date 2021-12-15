@@ -52,6 +52,9 @@ public class GetContactsActivity extends AppCompatActivity {
     // Button to submit all the selected contacts
     private Button submitContacts;
 
+    // Emergency Service Requested
+    private String service;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,8 @@ public class GetContactsActivity extends AppCompatActivity {
         contactsList = findViewById(R.id.contactsList);
         userAddress = findViewById(R.id.userAddress);
         submitContacts = findViewById(R.id.submitContacts);
+
+        service = getIntent().getStringExtra("Service");
 
         // Create the adapter to convert the array to views
         adapter = new ContactsAdapter(this, contacts);
@@ -194,6 +199,7 @@ public class GetContactsActivity extends AppCompatActivity {
         // Send list of Contact Objects to SMS Activity
         intent.putParcelableArrayListExtra("Contacts", contacts);
         intent.putExtra("Address", address);
+        intent.putExtra("Service", service);
         startActivity(intent);
     }
 }

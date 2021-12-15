@@ -30,11 +30,15 @@ public class SMSActivity extends AppCompatActivity {
     private String userAddress;
     // EditText to send Emergency Message
     private EditText emergencyMessage;
+    // Emergency Service that user requested
+    private String service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smsactivity);
+
+        service = getIntent().getStringExtra("Service");
 
         contacts = getIntent().getParcelableArrayListExtra("Contacts");
         Log.i(TAG, "Contacts Received: " + contacts);
@@ -94,7 +98,7 @@ public class SMSActivity extends AppCompatActivity {
 
     private void createDefaultMessage() {
         String user = ParseUser.getCurrentUser().getUsername();
-        String message = "URGENT: " + user + " needs you to call 911. " + user + "'s address is: " + userAddress;
+        String message = "URGENT: " + user + " needs you to call 911 and contact " + service + ". " + user + "'s address is: " + userAddress;
         emergencyMessage.setText(message);
     }
 

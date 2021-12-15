@@ -31,7 +31,7 @@ public class ChooseEmergencyServiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // User chose to request the Fire Department
-                String emergency = "fire";
+                String emergency = "Fire Department";
                 goGetContactsActivity(emergency);
             }
         });
@@ -40,7 +40,7 @@ public class ChooseEmergencyServiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // User chose to request Medical/EMS Services
-                String emergency = "medical";
+                String emergency = "EMS";
                 goGetContactsActivity(emergency);
             }
         });
@@ -49,7 +49,7 @@ public class ChooseEmergencyServiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // User chose to request Police
-                String emergency = "police";
+                String emergency = "The Police";
                 goGetContactsActivity(emergency);
             }
         });
