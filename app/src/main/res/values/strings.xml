@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Emergency</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Needed for Parse Database-->
+    <string name="back4app_app_id">PlzCHsEhBOUCd71v4v4MREdQmnxb3fmpK35E3jI1</string>
+    <string name="back4app_client_key">77deumLBZHuWNwgR82TbRu8gnWfKouLkQgNYokYS</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account">Don\'t have an Account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already Have an Account?</string>
+    <string name="click_here">Click Here</string>
+    <string name="register">Register</string>
+    <string name="welcome">Welcome</string>
+    <string name="name">Name</string>
+    <string name="new_emergency">New Emergency</string>
+    <string name="logout">Logout</string>
+    <string name="create_your_message">Create Your Message</string>
+    <string name="enter_your_emergency_message_here">Enter Your Emergency Message Here</string>
+    <string name="send_emergency_message">Send Emergency Message</string>
+    <string name="emergency">Emergency</string>
+    <string name="select_your_contacts">Select Your Contacts</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="done">Done</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="choose_a_service">Choose a Service</string>
+    <string name="police">Police</string>
+    <string name="firefighters">Firefighters</string>
+    <string name="medical">Medical</string>
 </resources>
